@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color on Scroll</title>
+
+    <!-- CSS Here -->
+    <style>
+        body {
+            background-color: green;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        body.changeColor {
+            background-color: white;
+            color: black;
+        }
+
+        .intro,
+        .outro {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <!-- JavaScript here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $( function () {
+            $( window ).scroll( function () {
+                if ( $( this ).scrollTop() > 100 ) {
+                    $( 'body' ).addClass( 'changeColor' );
+                } else {
+                    $( 'body' ).removeClass( 'changeColor' );
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="intro">
+        <h1>Patrick Cameron</h1>
+        <h2>Front End Web Developer, Toronto</h2>
+    </div>
+
+    <div class="outro">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum maiores consectetur quis, eos delectus ad rerum,
+            molestias at recusandae in quo, dignissimos fugiat obcaecati veniam assumenda placeat expedita optio
+            voluptatibus.</p>
+    </div>
+</body>
+
+</html>
